@@ -1,0 +1,14 @@
+/*
+body {
+    display: flex;
+    flex-flow: row wrap;
+}
+*/
+div {
+    display: inline-block;
+    height: 5px;
+    width: 25px;
+    background-color: chocolate; 
+    margin-right: 2px;
+    
+};

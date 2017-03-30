@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>D3 Fun 1</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script type="text/javascript" src="d3.v3.js"></script>
+    
+</head>
+
+<body>
+   <div></div>
+    <script type="text/javascript">
+        
+        const slogan = 'D3 is the biz natch';
+        const dataset = [1, 2, 4, 16, 32, 64, 128];
+        const randDataSet = [];
+        
+        for (i=0, i<25, i++){
+            var newNum = Math.random() * 30;
+            randDataSet.push(newNum);
+        };
+        
+        d3.select("body").selectAll("p")
+            .data(slogan)
+            .enter()
+            .append("p")
+//            .text("New paragraph");
+            .text(function(){return slogan});
+        
+        d3.select('body').selectAll('div')
+            .data(dataset)
+            .enter()
+            .append('div')
+            .attr('div','bar')
+            .style('height', function(d){
+                var barheight = d * 5;
+                return barheight + 'px'
+           });
+        
+        d3.select('body').selectAll('div')
+            .data(randDataSet)
+            .enter()
+            .append('div')
+            .attr('div','bar')
+            .style('height', function(d){
+                var barheight = d * 5;
+                return barheight + 'px'
+           });
+    </script>
+</body>
+
+</html>
